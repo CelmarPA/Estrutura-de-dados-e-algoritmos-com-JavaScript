@@ -25,4 +25,4 @@ function restParameterFunction1(x, y) {
     var a = Array.prototype.slice.call(arguments, 2);
     return (x + y) * a.length;
 }
-console.log(restParameterFunction1(1, 2, 'hello', true, 7));
+console.log(restParameterFunction1(1, 2, "hello", true, 7));
