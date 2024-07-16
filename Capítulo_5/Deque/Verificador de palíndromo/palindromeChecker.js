@@ -1,6 +1,6 @@
 import Deque from "../Deque com atributos privados/dequePrivate.js";
 
-// Um palíndromo é uma palavra, frase, número ou outra sequência de caracteres que é lido igualmente de trás para frente ou de frente para trás, por exemplo, madam ou racecar.1
+// Um palíndromo é uma palavra, frase, número ou outra sequência de caracteres que é lido igualmente de trás para frente ou de frente para trás, por exemplo, madam ou racecar.
 
 // O algoritmo a seguir utiliza um deque para solucionar esse problema:
 function palindromeChecker(aString) {
