@@ -3,7 +3,7 @@ import Queue from "../Fila com atributos privados/queuePrivate.js";
 // Neste exemplo, implementaremos uma simulação do jogo de Batata Quente:
 function hotPotato(elementsList, num) {
     const queue = new Queue(); // Usa a classe Queue
-    const elimitatedList = [];
+    const eliminatedList = [];
     for (let i = 0; i < elementsList.length; i++) {
         queue.enqueue(elementsList[i]); // Obtém uma lista de nomes e enfileira todos eles
     }
@@ -11,10 +11,10 @@ function hotPotato(elementsList, num) {
         for (let i = 0; i < num; i++) {
             queue.enqueue(queue.dequeue()); // Removemos um item do início da fila e o adicionamos no final para simular a batata quente
         }
-        elimitatedList.push(queue.dequeue()); // Uma vez que o número for alcançado, a pessoa que tiver a batata quente será eliminada
+        eliminatedList.push(queue.dequeue()); // Uma vez que o número for alcançado, a pessoa que tiver a batata quente será eliminada
     }
     return {
-        eliminated: elimitatedList,
+        eliminated: eliminatedList,
         winner: queue.dequeue(), // Quando restar apenas uma pessoa, ela será declarada a vencedora
     };
 }

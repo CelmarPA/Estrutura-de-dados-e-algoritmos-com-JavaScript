@@ -68,7 +68,7 @@ console.log(queue.size()); // 3
 console.log(queue.isEmpty())// False
 queue.dequeue(); // remove John
 queue.dequeue(); // remove Jack 
-console.log(queue.toString());
+console.log(queue.toString()); // Camila
 
 queue.clear();
 console.log(queue.isEmpty());
