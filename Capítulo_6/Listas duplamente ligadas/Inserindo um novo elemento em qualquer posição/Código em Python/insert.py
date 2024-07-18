@@ -156,41 +156,45 @@ class LinkedList:
             current = current.next
         return obj_string
 
-# Exemplos de uso:
-linked_list = LinkedList()
+# Classe DoublyLinkedList:
+class DoublyLinkedList(LinkedList):
+    def __ini__(self, equalsFn = defaultEquals):
+        super().__init__(equalsFn)
+        self.__tail = None
 
-# Teste do método push()
-linked_list.push(10)
-linked_list.push(20)
-linked_list.push(30)
-print("Lista após push:", linked_list.to_string())  # Output: 10, 20, 30
+    # Método getter para __tail
+    def get_tail(self):
+        return self.__tail
+    
+    # Método setter para __tail
+    def set_tail(self, tail):
+        self.__tail = tail
 
-# Teste do método insert()
-linked_list.insert(15, 1)
-print("Lista após insert:", linked_list.to_string())  # Output: 10, 15, 20, 30
-
-# Teste do método get_element_at()
-print("Elemento na posição 2:", linked_list.get_element_at(2).element)  # Output: 20
-
-# Teste do método index_of()
-print("Índice do elemento 15:", linked_list.index_of(15))  # Output: 1
-
-# Teste do método remove()
-linked_list.remove(20)
-print("Lista após remove:", linked_list.to_string())  # Output: 10, 15, 30
-
-# Teste do método size()
-print("Tamanho da lista:", linked_list.size())  # Output: 3
-
-# Teste do método is_empty()
-print("Lista vazia?", linked_list.is_empty())  # Output: False
-
-# Teste do método get_head()
-print("Cabeça da lista:", linked_list.get_head().element)  # Output: 10
-
-# Teste do método clear()
-linked_list.clear()
-print("Lista após clear:", linked_list.to_string())  # Output: ""
-
-# Verificação se a lista está vazia após clear()
-print("Lista vazia após clear?", linked_list.is_empty())  # Output: True
+    # Método insert:
+    def insert(self, element, index):
+        if (index >= 0 and index <= self.get_count()):
+            node = DoublyLinkedList(element)
+            current = self.get_head()
+            if (index == 0):
+                if (self.get_head() == None):
+                    self.set_head(node)
+                    self.set_tail(node)
+                else:
+                    node.next = current
+                    current.prev = node
+                    self.set_head(node)
+            elif (index == self.get_count()): # último item
+                current = self.get_tail()
+                current.next = node
+                node.prev = current
+                self.set_tail(node)
+            else:
+                previous = self.get_element_at(index - 1)
+                current = previous.next
+                node.next = current
+                previous.next = node
+                current.prev = node
+                node.prev = previous
+            self.set_increment_count()
+            return True
+        return False

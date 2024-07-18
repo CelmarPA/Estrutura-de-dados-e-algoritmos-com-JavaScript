@@ -21,7 +21,6 @@ export class DoublyLinkedList extends LinkedList {
             this.#tail = node;
         }
         this._incrementCount();
-        9;
     }
 
     insert(element, index) {

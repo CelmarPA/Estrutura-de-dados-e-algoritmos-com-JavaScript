@@ -22,7 +22,7 @@ class DoublyLinkedList extends LinkedList {
                     this.head = node;
                 }                
             } else if (index === this.count) { // último item
-                current = thistail;
+                current = this.tail;
                 current.next = node;
                 node.prev = current;
                 this.tail = node;

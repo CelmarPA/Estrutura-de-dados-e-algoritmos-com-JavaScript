@@ -9,7 +9,7 @@ class StackLinkedList {
     }
 
     pop() {
-        if (this.isEmpty()) {
+        if (this.items.isEmpty()) {
             return undefined;
         }
         return this.items.removeAt(this.size() - 1);

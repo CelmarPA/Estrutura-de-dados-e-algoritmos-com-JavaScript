@@ -155,42 +155,53 @@ class LinkedList:
             obj_string = f"{obj_string}, {current.element}"
             current = current.next
         return obj_string
+    
+# Classe SortedLinkedList
+class SortedLinkedList(LinkedList):
+    def __init__(self, equalsFn = defaultEquals, compareFn = defaultCompare):
+        super().__init__(equalsFn)
+        self.compareFn = compareFn
 
-# Exemplos de uso:
-linked_list = LinkedList()
+    # Método insert
+    def insert(self,element):
+        if (self.is_empty()):
+            return super().insert(element, 0)
+        pos = self.get_index_next_sorted_element(element)
+        return super().insert(element, pos)
 
-# Teste do método push()
-linked_list.push(10)
-linked_list.push(20)
-linked_list.push(30)
-print("Lista após push:", linked_list.to_string())  # Output: 10, 20, 30
+    # Método get_index_next_sorted_element
+    def get_index_next_sorted_element(self, element):
+        current = self.get_head()
+        for i in range(self.size()):
+            if current is None:
+                break
+            comp = self.compareFn(element, current.element)
+            if comp == Compare["LESS_THAN"]:
+                return i
+            current = current.next
+        return self.size()
+    
+# Criando uma instância da SortedLinkedList
+sortedLinkedList = SortedLinkedList()
 
-# Teste do método insert()
-linked_list.insert(15, 1)
-print("Lista após insert:", linked_list.to_string())  # Output: 10, 15, 20, 30
+# Adicionando alguns elementos
+sortedLinkedList.insert(3)  # Lista: 3
+sortedLinkedList.insert(1)  # Lista: 1 -> 3
+sortedLinkedList.insert(4)  # Lista: 1 -> 3 -> 4
+sortedLinkedList.insert(2)  # Lista: 1 -> 2 -> 3 -> 4
 
-# Teste do método get_element_at()
-print("Elemento na posição 2:", linked_list.get_element_at(2).element)  # Output: 20
+print("Lista ordenada:")
+current = sortedLinkedList.get_head()
+for i in range(sortedLinkedList.size()):
+    print(current.element)
+    current = current.next
 
-# Teste do método index_of()
-print("Índice do elemento 15:", linked_list.index_of(15))  # Output: 1
+# Tentando adicionar mais elementos
+sortedLinkedList.insert(0)  # Lista: 0 -> 1 -> 2 -> 3 -> 4
+sortedLinkedList.insert(5)  # Lista: 0 -> 1 -> 2 -> 3 -> 4 -> 5
 
-# Teste do método remove()
-linked_list.remove(20)
-print("Lista após remove:", linked_list.to_string())  # Output: 10, 15, 30
-
-# Teste do método size()
-print("Tamanho da lista:", linked_list.size())  # Output: 3
-
-# Teste do método is_empty()
-print("Lista vazia?", linked_list.is_empty())  # Output: False
-
-# Teste do método get_head()
-print("Cabeça da lista:", linked_list.get_head().element)  # Output: 10
-
-# Teste do método clear()
-linked_list.clear()
-print("Lista após clear:", linked_list.to_string())  # Output: ""
-
-# Verificação se a lista está vazia após clear()
-print("Lista vazia após clear?", linked_list.is_empty())  # Output: True
+print("Lista ordenada após mais inserções:")
+current = sortedLinkedList.get_head()
+for i in range(sortedLinkedList.size()):
+    print(current.element)
+    current = current.next

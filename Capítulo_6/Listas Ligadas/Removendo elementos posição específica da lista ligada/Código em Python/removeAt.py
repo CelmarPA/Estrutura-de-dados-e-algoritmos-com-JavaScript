@@ -39,7 +39,7 @@ class LinkedList:
     # removeAt(position): esse método remove um item de uma posição específica da lista.
     def remove_at(self, index):
         # verifica valores fora do intervalo
-        if (index > 0 and index < self.count):
+        if (index >= 0 and index < self.count):
             current = self.head
             if (index == 0): #  remove o primeiro elemento da lista
                 self.head = current.next

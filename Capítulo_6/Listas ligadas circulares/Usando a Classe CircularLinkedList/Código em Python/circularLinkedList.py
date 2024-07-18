@@ -155,42 +155,132 @@ class LinkedList:
             obj_string = f"{obj_string}, {current.element}"
             current = current.next
         return obj_string
+    
+# Classe CircularLinkedList
+class CircularLinkedList(LinkedList):
+    def __init__(self, equalsFn =  defaultEquals):
+        super().__init__(equalsFn)
 
-# Exemplos de uso:
-linked_list = LinkedList()
+    # Método insert
+    def insert(self, element, index):
+        if (index >= 0 and index <= self.get_count()):
+            node = Node(element)
+            current = self.get_head()
+            if (index == 0): # Primeiro item
+                if self.get_head() is None:
+                    self.set_head(node)
+                    node.next = self.get_head()
+                else:
+                    node.next = current
+                    current = self.get_element_at(self.size() - 1)
+                    # atualiza o útlimo elemento
+                    self.set_head(node)
+                    current.next = self.get_head()
+            else:
+                previous = self.get_element_at(index - 1)
+                node.next = previous.next
+                previous.next = node
+            self.set_increment_count()
+            return True
+        return False
+    
+    # Método remove_at
+    def remove_at(self, index):
+        if (index >= 0 and index <= self.get_count()):
+            current = self.get_head()
+            if (index == 0):
+                if (self.size() == 1):
+                    self.set_head(None)
+                else:
+                    removed = self.get_head()
+                    current = self.get_element_at(self.size())
+                    self.set_head(self.get_head().next)
+                    current.next = self.get_head()
+                    current = removed
+            else:
+                # não há necessidade de atualizar o último elemento da lista circular
+                previous = self.get_element_at(index - 1)
+                current = previous.next
+                previous.next = current.next
+            self.set_decrement_count()
+            return current.element
+        return None
 
-# Teste do método push()
-linked_list.push(10)
-linked_list.push(20)
-linked_list.push(30)
-print("Lista após push:", linked_list.to_string())  # Output: 10, 20, 30
+# Testando a classe CircularLinkedList
 
-# Teste do método insert()
-linked_list.insert(15, 1)
-print("Lista após insert:", linked_list.to_string())  # Output: 10, 15, 20, 30
+# Criando uma instância da lista circular
+circular_linked_list = CircularLinkedList()
 
-# Teste do método get_element_at()
-print("Elemento na posição 2:", linked_list.get_element_at(2).element)  # Output: 20
+# Testando o método push
+circular_linked_list.push(1)
+circular_linked_list.push(2)
+circular_linked_list.push(3)
+print(circular_linked_list.to_string())  # Saída: "1, 2, 3"
 
-# Teste do método index_of()
-print("Índice do elemento 15:", linked_list.index_of(15))  # Output: 1
+# Testando o método removeAt
+print(circular_linked_list.remove_at(1))  # Saída: 2
+print(circular_linked_list.to_string())  # Saída: "1, 3"
 
-# Teste do método remove()
-linked_list.remove(20)
-print("Lista após remove:", linked_list.to_string())  # Output: 10, 15, 30
+# Testando o método getElementAt
+print(circular_linked_list.get_element_at(1).element)  # Saída: 3
+print(circular_linked_list.get_element_at(0).element)  # Saída: 1
 
-# Teste do método size()
-print("Tamanho da lista:", linked_list.size())  # Output: 3
+# Testando o método insert
+circular_linked_list.insert(4, 1)
+print(circular_linked_list.to_string())  # Saída: "1, 4, 3"
+circular_linked_list.insert(5, 0)
+print(circular_linked_list.to_string())  # Saída: "5, 1, 4, 3"
 
-# Teste do método is_empty()
-print("Lista vazia?", linked_list.is_empty())  # Output: False
+# Testando o método indexOf
+print(circular_linked_list.index_of(4))  # Saída: 2
+print(circular_linked_list.index_of(6))  # Saída: -1
 
-# Teste do método get_head()
-print("Cabeça da lista:", linked_list.get_head().element)  # Output: 10
+# Testando o método remove
+print(circular_linked_list.remove(4))  # Saída: 4
+print(circular_linked_list.to_string())  # Saída: "5, 1, 3"
 
-# Teste do método clear()
-linked_list.clear()
-print("Lista após clear:", linked_list.to_string())  # Output: ""
+# Testando o método size
+print(circular_linked_list.size())  # Saída: 3
 
-# Verificação se a lista está vazia após clear()
-print("Lista vazia após clear?", linked_list.is_empty())  # Output: True
+# Testando o método isEmpty
+print(circular_linked_list.is_empty())  # Saída: False
+circular_linked_list.remove(5)
+circular_linked_list.remove(1)
+circular_linked_list.remove(3)
+print(circular_linked_list.is_empty())  # Saída: True
+
+# Testando o método getHead
+circular_linked_list.push(6)
+print(circular_linked_list.get_head().element)  # Saída: 6
+
+# Testando o método toString
+circular_linked_list.push(7)
+circular_linked_list.push(8)
+print(circular_linked_list.to_string())  # Saída: "6, 7, 8"
+
+# Testando o método clear
+circular_linked_list.clear()
+print(circular_linked_list.to_string())  # Saída: ""
+print(circular_linked_list.is_empty())  # Saída: True
+
+# Adicionando alguns elementos
+circular_linked_list.insert('A', 0)  # Lista: A
+circular_linked_list.insert('B', 1)  # Lista: A -> B
+circular_linked_list.insert('C', 2)  # Lista: A -> B -> C
+circular_linked_list.insert('D', 3)  # Lista: A -> B -> C -> D
+
+print("Lista antes da remoção:")
+current = circular_linked_list.get_head()
+for _ in range(circular_linked_list.size()):
+    print(current.element)
+    current = current.next
+
+# Removendo o elemento na posição 1 (índice 1 - começando do 0)
+removed_element = circular_linked_list.remove_at(1)
+print(f"Elemento removido: {removed_element}")
+
+print("Lista após a remoção:")
+current = circular_linked_list.get_head()
+for _ in range(circular_linked_list.size()):
+    print(current.element)
+    current = current.next
