@@ -13,7 +13,6 @@ export default class LinkedList {
         if (index > 0 && index < this.count) {
             // verifica se index é válido
             let current = this.head;
-            //remove o primeiro item
             if (index === 0) {
                 // remove o primeiro elemento da lista
                 this.head = current.next;

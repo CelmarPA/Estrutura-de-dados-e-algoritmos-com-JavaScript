@@ -9,7 +9,8 @@ export const Compare = {
     BIGGER_THAN: 1
 };
 
- export function defaultCompare(a, b) {
+// defaultCompare:
+export function defaultCompare(a, b) {
     if (a === b) {
         return 0;
     }

@@ -107,6 +107,11 @@ export default class LinkedList {
         return this.#head.element;
     }
 
+    clear() {
+        this.#head = undefined;
+        this.#count = 0;
+    }
+
     toString() {
         if (this.#head == null) {
             return "";
@@ -118,11 +123,6 @@ export default class LinkedList {
             current = current.next;
         }
         return objString;
-    }
-
-    clear() {
-        this.#head = undefined;
-        this.#count = 0;
     }
 
     // Métodos protegidos para acessar atributos privados
