@@ -1,6 +1,6 @@
 import { defaultEquals } from "../../models/util.js";
 import { DoublyNode } from "../../models/linked-list-models.js";
-import LinkedList from "../../Listas Ligadas/Usando a Classe LinkedList/linkegList.js";
+import LinkedList from "../../Listas Ligadas/Usando a Classe LinkedList/linkedList.js";
 
 export class DoublyLinkedList extends LinkedList {
     #tail;
@@ -139,43 +139,43 @@ export class DoublyLinkedList extends LinkedList {
     }
 }
 
-// Criação da lista
-const doublyLinkedList = new DoublyLinkedList();
+// // Criação da lista
+// const doublyLinkedList = new DoublyLinkedList();
 
-// Teste do método push
-doublyLinkedList.push(10);
-doublyLinkedList.push(20);
-doublyLinkedList.push(30);
-console.log(doublyLinkedList.toString()); // Saída: 10, 20, 30
-console.log(doublyLinkedList.inverseToString()); // Saída: 30, 20, 10
+// // Teste do método push
+// doublyLinkedList.push(10);
+// doublyLinkedList.push(20);
+// doublyLinkedList.push(30);
+// console.log(doublyLinkedList.toString()); // Saída: 10, 20, 30
+// console.log(doublyLinkedList.inverseToString()); // Saída: 30, 20, 10
 
-// Teste do método insert
-doublyLinkedList.insert(5, 0); // Inserir no início
-doublyLinkedList.insert(25, 3); // Inserir no meio
-doublyLinkedList.insert(35, 5); // Inserir no final
-console.log(doublyLinkedList.toString()); // Saída: 5, 10, 20, 25, 30, 35
+// // Teste do método insert
+// doublyLinkedList.insert(5, 0); // Inserir no início
+// doublyLinkedList.insert(25, 3); // Inserir no meio
+// doublyLinkedList.insert(35, 5); // Inserir no final
+// console.log(doublyLinkedList.toString()); // Saída: 5, 10, 20, 25, 30, 35
 
-// Teste do método removeAt
-doublyLinkedList.removeAt(0); // Remover do início
-console.log(doublyLinkedList.toString()); // Saída: 10, 20, 25, 30, 35
+// // Teste do método removeAt
+// doublyLinkedList.removeAt(0); // Remover do início
+// console.log(doublyLinkedList.toString()); // Saída: 10, 20, 25, 30, 35
 
-doublyLinkedList.removeAt(2); // Remover do meio
-console.log(doublyLinkedList.toString()); // Saída: 10, 20, 30, 35
+// doublyLinkedList.removeAt(2); // Remover do meio
+// console.log(doublyLinkedList.toString()); // Saída: 10, 20, 30, 35
 
-doublyLinkedList.removeAt(3); // Remover do final
-console.log(doublyLinkedList.toString()); // Saída: 10, 20, 30
+// doublyLinkedList.removeAt(3); // Remover do final
+// console.log(doublyLinkedList.toString()); // Saída: 10, 20, 30
 
-// Teste do método indexOf
-console.log(doublyLinkedList.indexOf(20)); // Saída: 1
-console.log(doublyLinkedList.indexOf(50)); // Saída: -1
+// // Teste do método indexOf
+// console.log(doublyLinkedList.indexOf(20)); // Saída: 1
+// console.log(doublyLinkedList.indexOf(50)); // Saída: -1
 
-// Teste do método getHead e getTail
-console.log(doublyLinkedList.getHead().element); // Saída: 10
-console.log(doublyLinkedList.getTail().element); // Saída: 30
+// // Teste do método getHead e getTail
+// console.log(doublyLinkedList.getHead().element); // Saída: 10
+// console.log(doublyLinkedList.getTail().element); // Saída: 30
 
-// Teste do método clear
-doublyLinkedList.clear();
-console.log(doublyLinkedList.isEmpty()); // saída: true
-console.log(doublyLinkedList.toString()); // Saída: ""
-console.log(doublyLinkedList.getHead()); // Saída: undefined
-console.log(doublyLinkedList.getTail()); // Saída: undefined
+// // Teste do método clear
+// doublyLinkedList.clear();
+// console.log(doublyLinkedList.isEmpty()); // saída: true
+// console.log(doublyLinkedList.toString()); // Saída: ""
+// console.log(doublyLinkedList.getHead()); // Saída: undefined
+// console.log(doublyLinkedList.getTail()); // Saída: undefined
