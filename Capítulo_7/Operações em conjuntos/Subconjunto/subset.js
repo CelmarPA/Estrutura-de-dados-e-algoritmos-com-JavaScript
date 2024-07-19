@@ -32,5 +32,5 @@ const setC = new Subset();
 setC.add(2);
 setC.add(3);
 setC.add(4);
-console.log(setA.isSubsetOf(setB));
-console.log(setA.isSubsetOf(setC));
+console.log(setA.isSubsetOf(setB)); // true
+console.log(setA.isSubsetOf(setC)); // false

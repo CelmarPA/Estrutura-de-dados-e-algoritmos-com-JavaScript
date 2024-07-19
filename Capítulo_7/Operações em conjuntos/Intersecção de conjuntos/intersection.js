@@ -20,13 +20,13 @@ const setA = new SetIntersection();
 setA.add(1);
 setA.add(2);
 setA.add(3);
+console.log(setA.values()); // [1, 2, 3]
 
-console.log(setA.values());
 const setB = new SetIntersection();
 setB.add(2);
 setB.add(3);
 setB.add(4);
-console.log(setB.values());
+console.log(setB.values()); // [2, 3, 4]
 
 const intersectionAB = setA.intersection(setB);
 console.log(intersectionAB.values()); // [ 2, 3 ]

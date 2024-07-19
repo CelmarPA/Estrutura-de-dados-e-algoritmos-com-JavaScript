@@ -31,12 +31,14 @@ setA.add(4);
 setA.add(5);
 setA.add(6);
 setA.add(7);
+console.log(setA.values()); // [1, 2, 3, 4, 5, 6, 7]
 
-console.log(setA.values());
 const setB = new SetIntersection();
 setB.add(4);
 setB.add(6);
-console.log(setB.values());
+console.log(setB.values()); // [ 4, 6 ]
 
 const intersectionAB = setA.intersection(setB);
-console.log(intersectionAB.values()); // [ 2, 3 ]
+const intersectionBA = setB.intersection(setA);
+console.log(intersectionAB.values()); // [ 4, 6 ]
+

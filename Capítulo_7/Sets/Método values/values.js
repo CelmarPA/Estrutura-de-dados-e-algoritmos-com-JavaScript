@@ -14,9 +14,9 @@ class Set {
         let values = [];
         for (let key in this.items) {
             if (this.items.hasOwnProperty(key)) {
-                values.push(key)
+                values.push(self.items[key]);
             }
-        }
+        }   
         return values;
     }
 }
