@@ -130,3 +130,5 @@ dictionary.forEach((k, v) => {
     console.log('forEach: ', `key: ${k}, value: ${v}`);
     }); // forEach: key: Gandalf, value: gandalf@email.com
         // forEach: key: Tyrion, value: tyrion@email.com
+
+console.log(dictionary.toString())

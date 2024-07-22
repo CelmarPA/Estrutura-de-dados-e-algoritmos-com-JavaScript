@@ -22,4 +22,3 @@ export default class Dictionary {
         return valuePairs;
     }
 }
-
