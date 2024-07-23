@@ -110,7 +110,6 @@ class HashTableLinearProbingLazy:
     def is_empty(self):
         return self.size() == 0
     
-
     # Método clear
     def clear(self):
         self.__table = {}
