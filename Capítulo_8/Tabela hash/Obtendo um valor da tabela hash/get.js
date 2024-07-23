@@ -6,7 +6,7 @@ class HashTable {
         this.table = {};
     }
 
-    //get(key): esse método devolve um value específico encontrado com key.
+    // get(key): esse método devolve um value específico encontrado com key.
     get(key) {
         const valuePair = this.table[this.hashCode(key)];
         return valuePair == null ? undefined : valuePair.value;

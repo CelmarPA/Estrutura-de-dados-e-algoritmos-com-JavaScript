@@ -45,7 +45,7 @@ class HashTable {
         return false;
     }
 
-    //get(key): esse método devolve um value específico encontrado com key.
+    // get(key): esse método devolve um value específico encontrado com key.
     get(key) {
         const valuePair = this._getTable()[this.hashCode(key)];
         return valuePair == null ? undefined : valuePair.value;

@@ -12,7 +12,7 @@ class ValuePair:
         self.key = key
         self.value = value
     
-    def toString(self):
+    def __str__(self):
         return f"[#{self.key}: {self.value}]"
     
 # Classe Dictionary
@@ -111,9 +111,9 @@ class Dictionary:
         if self.is_empty():
             return ""
         value_pairs = self.key_values()
-        obj_string = f"{str(value_pairs[0])}"
+        obj_string = f"{value_pairs[0].__str__()}"
         for i in range (1, len(value_pairs)):
-            obj_string = f"{obj_string}, {str(value_pairs[i])}"
+            obj_string = f"{obj_string}, {value_pairs[i].__str__()}"
         return obj_string
     
 # Vamos executar um código que utilize a classe que criamos:

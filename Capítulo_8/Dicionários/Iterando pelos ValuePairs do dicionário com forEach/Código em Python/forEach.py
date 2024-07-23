@@ -12,7 +12,7 @@ class ValuePair:
         self.key = key
         self.value = value
     
-    def toString(self):
+    def __str__(self):
         return f"[#{self.key}: {self.value}]"
 
 # Classe Dictionary

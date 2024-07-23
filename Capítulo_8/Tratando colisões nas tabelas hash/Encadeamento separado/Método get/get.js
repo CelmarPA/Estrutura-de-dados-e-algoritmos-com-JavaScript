@@ -7,7 +7,7 @@ class HashTableSeparateChaining {
         this.table = {};
     }
 
-    //Método get:
+    // Método get:
     get(key) {
         const position = this.hashCode(key);
         const linkedList = this.table[position];

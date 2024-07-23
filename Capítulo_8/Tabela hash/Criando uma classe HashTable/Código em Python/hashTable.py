@@ -1,5 +1,5 @@
 # defaultToString:
-def defaultToString(item):
+def defaul_to_string(item):
     if item is None:
         return "NONE"
     elif isinstance(item, str):
@@ -11,12 +11,13 @@ class ValuePair:
     def __init__(self, key, value):
         self.key = key
         self.value = value
-    
+
     def __str__(self):
         return f"[#{self.key}: {self.value}]"
 
-# Classe Dictionary
-class Dictionary:
-    def __init__(self, to_str_fn = defaultToString):
-        self.to_str_fn = to_str_fn
+# Classe HashTable
+class HashTable:
+    def __init__(self, to_str_fn = defaul_to_string):
+        self.to_srt_fh = to_str_fn
         self.table = {}
+    

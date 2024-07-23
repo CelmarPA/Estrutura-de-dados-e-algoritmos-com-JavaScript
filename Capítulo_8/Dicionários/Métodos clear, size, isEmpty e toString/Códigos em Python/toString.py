@@ -22,7 +22,7 @@ class Dictionary:
         self.table = {}
     
     # Método to_string:
-    def to_string(self):
+    def __str__(self):
         if self.is_empty():
             return ""
         value_pairs = self.key_values()

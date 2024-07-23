@@ -79,6 +79,7 @@ class HashTableSeparateChaining {
                     }
                     return true
                 }
+                current = current.next;
             }
         }
         return false;

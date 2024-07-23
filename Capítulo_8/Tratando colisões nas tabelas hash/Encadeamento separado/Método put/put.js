@@ -7,7 +7,7 @@ class HashTableSeparateChaining {
         this.table = {};
     }
 
-    //Método put:
+    // Método put:
     put(key, value) {
         if (key != null && value != null) {
             const position = this.hashCode(key);
