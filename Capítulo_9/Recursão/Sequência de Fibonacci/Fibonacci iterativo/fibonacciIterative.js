@@ -12,4 +12,4 @@ function fibonacciIterative(n) {
     }
     return fibN;
 }
- console.log(fibonacciIterative(10))
+ console.log(fibonacciIterative(10)) // 55
