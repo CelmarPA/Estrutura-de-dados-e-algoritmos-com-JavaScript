@@ -136,7 +136,7 @@ export default class BinarySearchTree {
 
     // remove(key): esse método remove a chave da árvore.
     remove(key) {
-        this.root = this.removeNode(this._getRoot(), key);
+        this._setRoot(this.removeNode(this._getRoot(), key))
     }
 
     // Método auxiliar removeNode(node, key):
@@ -214,5 +214,6 @@ console.log(tree.max().key); // 25
 console.log(tree.search(1) ? "Key 1 found." : "Key 1 not found."); // Key 1 not found.
 console.log(tree.search(8) ? "Key 8 found." : "Key 8 not found."); // Key 8 found.
 
-tree.remove(6); // Remove a chave 15 da árvore
+tree.remove(6); // Remove a chave 6 da árvore
+tree.remove(15); // Remove a chave 15 da árvore
 tree.inOrderTraverse(printNode); // Imprime os valores em ordem crescente após a remoção

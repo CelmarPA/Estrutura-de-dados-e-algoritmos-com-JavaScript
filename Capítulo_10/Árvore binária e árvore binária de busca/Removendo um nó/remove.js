@@ -24,11 +24,11 @@ export default class BinarySearchTree {
             node.right = this.removeNode(node.right, key);
             return node;
         } else {
-            // key is equal to node.item
-            // handle 3 special conditions
-            // 1 - a leaf node
-            // 2 - a node with only 1 child
-            // 3 - a node with 2 children
+            // key é igual a node.item
+            // lida com 3 condições especiais
+            // 1 - um nó folha
+            // 2 - um nó com apenas 1 filho
+            // 3 - um nó com 2 filhos
 
             // Caso 1
             if (node.left == null && node.right == null) {
