@@ -181,39 +181,39 @@ export default class BinarySearchTree {
     }
 }
 
-// Criação da Árvore:
-const tree = new BinarySearchTree();
+// // Criação da Árvore:
+// const tree = new BinarySearchTree();
 
-// Exemplos para método insert:
-tree.insert(11);
-tree.insert(7);
-tree.insert(15);
-tree.insert(5);
-tree.insert(3);
-tree.insert(9);
-tree.insert(8);
-tree.insert(10);
-tree.insert(13);
-tree.insert(12);
-tree.insert(14);
-tree.insert(20);
-tree.insert(18);
-tree.insert(25);
-tree.insert(6);
+// // Exemplos para método insert:
+// tree.insert(11);
+// tree.insert(7);
+// tree.insert(15);
+// tree.insert(5);
+// tree.insert(3);
+// tree.insert(9);
+// tree.insert(8);
+// tree.insert(10);
+// tree.insert(13);
+// tree.insert(12);
+// tree.insert(14);
+// tree.insert(20);
+// tree.insert(18);
+// tree.insert(25);
+// tree.insert(6);
 
-// Exemplos para os método de varredura:
-const printNode = (value) => console.log(value);
-tree.inOrderTraverse(printNode); // Imprime os valores em ordem crescente
-tree.preOrderTraverse(printNode); // Imprime os valores na ordem pré-ordem
-tree.postOrderTraverse(printNode); // Imprime os valores na ordem pós-ordem
+// // Exemplos para os método de varredura:
+// const printNode = (value) => console.log(value);
+// tree.inOrderTraverse(printNode); // Imprime os valores em ordem crescente
+// tree.preOrderTraverse(printNode); // Imprime os valores na ordem pré-ordem
+// tree.postOrderTraverse(printNode); // Imprime os valores na ordem pós-ordem
 
-// Exemplos dos método de pesquisa
-console.log(tree.min().key); // 3
-console.log(tree.max().key); // 25
+// // Exemplos dos método de pesquisa
+// console.log(tree.min().key); // 3
+// console.log(tree.max().key); // 25
 
-console.log(tree.search(1) ? "Key 1 found." : "Key 1 not found."); // Key 1 not found.
-console.log(tree.search(8) ? "Key 8 found." : "Key 8 not found."); // Key 8 found.
+// console.log(tree.search(1) ? "Key 1 found." : "Key 1 not found."); // Key 1 not found.
+// console.log(tree.search(8) ? "Key 8 found." : "Key 8 not found."); // Key 8 found.
 
-tree.remove(6); // Remove a chave 6 da árvore
-tree.remove(15); // Remove a chave 15 da árvore
-tree.inOrderTraverse(printNode); // Imprime os valores em ordem crescente após a remoção
+// tree.remove(6); // Remove a chave 6 da árvore
+// tree.remove(15); // Remove a chave 15 da árvore
+// tree.inOrderTraverse(printNode); // Imprime os valores em ordem crescente após a remoção
