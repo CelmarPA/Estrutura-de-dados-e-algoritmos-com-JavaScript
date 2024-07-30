@@ -15,20 +15,20 @@ export class MinHeap {
         const size = this.size();
         if (
             left < size &&
-            this.compareFn(this.heap[element], this.heap[left]) >
+            this.compareFn(this._getHeap()[element], this._getHeap()[left]) ===
                 Compare.BIGGER_THAN
         ) {
             element = left;
         }
         if (
             right < size &&
-            this.compareFn(this.heap[element], this.heap[right]) >
+            this.compareFn(this._getHeap()[element], this._getHeap()[right]) ===
                 Compare.BIGGER_THAN
         ) {
             element = right;
         }
         if (index !== element) {
-            swap(this.heap, index, element);
+            swap(this._getHeap(), index, element);
             this.siftDown(element);
         }
     }

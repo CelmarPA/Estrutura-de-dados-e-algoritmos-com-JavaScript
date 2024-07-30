@@ -40,7 +40,12 @@ export class MinHeap {
 
     // Método isEmpty
     isEmpty() {
-        return this.size() === 0;
+        return this.size() <= 0;
+    }
+
+    // Método clear
+    clear() {
+        this.#heap = [];
     }
 
     // Método findMinimum
@@ -51,8 +56,9 @@ export class MinHeap {
     // Método insert
     insert(value) {
         if (value != null) {
+            const index = this._getHeap().length
             this._pushToHeap(value);
-            this.siftUp(this._getHeap().length - 1);
+            this.siftUp(index);
             return true;
         }
         return false;
@@ -103,10 +109,11 @@ export class MinHeap {
         if (this.isEmpty()) {
             return undefined;
         }
-        if (this.size() == 1) {
+        if (this.size() === 1) {
             return this._getHeap().shift();
         }
-        const removedValue = this._getHeap().shift();
+        const removedValue = this._getHeap()[0];
+        this._getHeap()[0] = this._getHeap().pop()
         this.siftDown(0);
         return removedValue;
     }
@@ -114,7 +121,7 @@ export class MinHeap {
     // Método heapify
     heapify(array) {
         if (array) {
-            this._pushToHeap(array);
+            this.heap = array;
         }
         const maxIndex = Math.floor(this.size() / 2) - 1;
         for (let i = 0; i <= maxIndex; i++) {
@@ -134,11 +141,15 @@ export class MinHeap {
 // heap.insert(1);
 
 // // Mostrar o estado do heap
-// console.log('Heap após inserções:', heap._getHeap()); // Esperado: [1, 3, 8, 5]
+// console.log("Heap após inserções:", heap._getHeap()); // Esperado: [1, 3, 8, 5]
 
 // // Extrair o menor elemento
 // const min = heap.extract();
-// console.log('Elemento extraído:', min); // Esperado: 1
+// console.log("Elemento extraído:", min); // Esperado: 1
 
 // // Mostrar o estado do heap após a extração
-// console.log('Heap após extração:', heap._getHeap()); // Esperado: [3, 5, 8]
+// console.log("Heap após extração:", heap._getHeap()); // Esperado: [3, 5, 8]
+
+// // Aplicar heapify e mostrar o estado do heap
+// heap.heapify(heap._getHeap());
+// console.log("Heap após heapify:", heap._getHeap()); // Esperado: [3, 5, 8]

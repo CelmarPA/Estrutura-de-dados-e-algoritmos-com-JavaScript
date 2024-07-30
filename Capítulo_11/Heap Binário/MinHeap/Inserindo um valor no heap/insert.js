@@ -10,8 +10,9 @@ export class MinHeap {
     // Método insert(value): esse método insere um novo value no heap. Devolve true se value for inserido com sucesso, e false caso contrário.
     insert(value) {
         if (value != null) {
-            this.heap.push(value);
-            this.siftUp(this.heap.lengh - 1);
+            const index = this._getHeap().length
+            this._pushToHeap(value);
+            this.siftUp(index);
             return true;
         }
         return false;

@@ -14,10 +14,10 @@ export class MinHeap {
 
     // Método isEmpty
     isEmpty() {
-        return this.size() === 0;
+        return this.size() <= 0;
     }
 
-    // Método ffindMinimum(): esse método devolve o value mínimo (heap mínimo) ou máximo (heap máximo) sem removê-lo.
+    // Método findMinimum(): esse método devolve o value mínimo (heap mínimo) ou máximo (heap máximo) sem removê-lo.
     findMinimum() {
         return this.isEmpty() ? undefined : this.heap[0];
     }

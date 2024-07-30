@@ -12,7 +12,7 @@ export class MinHeap {
         let parent = this.getParentIndex(index);
         while (
             index > 0 &&
-            this.compareFn(this.heap[parent], this.heap[index]) >
+            this.compareFn(this.heap[parent], this.heap[index]) ===
                 Compare.BIGGER_THAN
         ) {
             swap(this.heap, parent, index);
