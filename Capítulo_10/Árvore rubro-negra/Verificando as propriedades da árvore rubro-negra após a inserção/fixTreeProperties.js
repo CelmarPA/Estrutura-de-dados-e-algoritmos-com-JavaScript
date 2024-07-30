@@ -12,7 +12,7 @@ class RedBlackTree extends BinarySearchTree {
 
     // Método fixTreeProperties
     fixTreeProperties(node) {
-        while (node && node.parent && node.parent.color.isRed() && node.color != Colors.BLACK) {
+        while (node && node.parent && node.parent.color === Colors.RED && node.color != Colors.BLACK) {
             let parent = node.parent;
             const grandParent = parent.parent;
             // Caso A: o pai é o filho a esquerda

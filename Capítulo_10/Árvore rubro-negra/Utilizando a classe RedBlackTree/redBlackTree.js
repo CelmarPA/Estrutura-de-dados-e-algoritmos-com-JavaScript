@@ -173,7 +173,6 @@ class RedBlackTree extends BinarySearchTree {
 }
 
 // Suponha que as classes e enums foram importados corretamente
-
 const tree = new RedBlackTree();
 
 // Inserir elementos na árvore

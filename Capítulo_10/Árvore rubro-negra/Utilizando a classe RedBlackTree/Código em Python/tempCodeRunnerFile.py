@@ -1,0 +1,1 @@
+trado: {search_result.key}" if search_result else f"Elemento não encontrado")

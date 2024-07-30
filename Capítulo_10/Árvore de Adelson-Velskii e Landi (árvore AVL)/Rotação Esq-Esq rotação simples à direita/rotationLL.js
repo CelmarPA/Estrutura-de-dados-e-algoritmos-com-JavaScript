@@ -1,4 +1,4 @@
-import BinarySearchTree from "../../../Capítulo_10/Árvore binária e árvore binária de busca/Usando a classe binarySearchTree/binarySearchTree.js";
+import BinarySearchTree from "../../Árvore binária e árvore binária de busca/Usando a classe binarySearchTree/binarySearchTree.js";
 import { defaultCompare, BalanceFactor, Compare } from "../../models/util.js";
 import { Node } from "../../models/node.js";
 
@@ -12,7 +12,7 @@ class AVLTree extends BinarySearchTree {
     rotationLL(node) {
         const tmp = node.left;
         node.left = tmp.right;
-        setTimeout.right = node;
+        tmp.right = node;
         return tmp;
     }
 }

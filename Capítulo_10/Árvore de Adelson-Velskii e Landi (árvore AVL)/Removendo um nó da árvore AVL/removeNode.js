@@ -37,6 +37,3 @@ class AVLTree extends BinarySearchTree {
         return node;
     }
 }
-
-// Criando uma nova árvore AVL
-const avlTree = new AVLTree();

@@ -23,7 +23,7 @@ class RedBlackTree extends BinarySearchTree {
 
     // Método insertNode
     insertNode(node, key) {
-        if (this.compareFn(key,  node.key) === Compare.LESS_THAN) {
+        if (this.compareFn(key, node.key) === Compare.LESS_THAN) {
             if (node.left == null) {
                 node.left = new RedBlackNode(key);
                 node.left.parent = node;

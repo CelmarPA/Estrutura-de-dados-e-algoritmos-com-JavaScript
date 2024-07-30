@@ -210,3 +210,17 @@ avlTree.remove(3);
 
 // A árvore é balanceada após cada remoção
 console.log(avlTree._getRoot());
+
+// Método para percurso em ordem
+function inOrderTraversal(node, result = []) {
+    if (node) {
+        inOrderTraversal(node.left, result);
+        result.push({ key: node.key});
+        inOrderTraversal(node.right, result);
+    }
+    return result;
+}
+
+// Exibir a árvore em ordem
+const result = inOrderTraversal(avlTree._getRoot());
+console.log(result);
