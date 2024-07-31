@@ -2,6 +2,7 @@ import { initializeColor, Colors } from "../models/util.js";
 import Queue from "../models/queue.js";
 import Graph from "../Graph/Utilizando a classe Graph/graph.js";
 
+// Função breadthFirstSearch
 export const breadthFirstSearch = (graph, startVertex, callback) => {
     const vertices = graph.getVertices();
     const adjList = graph.getAdjList();

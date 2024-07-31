@@ -1,8 +1,7 @@
 import { initializeColor, Colors } from "../models/util.js";
-import Queue from "../models/queue.js";
 import Graph from "../Graph/Utilizando a classe Graph/graph.js";
-import Stack from "../models/stack.js";
 
+// Função depthFirstSearch
 const depthFirstSearch = (graph, callback) => {
     const vertices = graph.getVertices();
     const adjList = graph.getAdjList();
@@ -57,3 +56,15 @@ graph.addEdge("E", "I");
 const printVertex = (value) => console.log("Visited vertex: " + value);
 
 depthFirstSearch(graph, printVertex);
+
+/**
+ * Visited vertex: A
+ * Visited vertex: B
+ * Visited vertex: E
+ * Visited vertex: I
+ * Visited vertex: F
+ * Visited vertex: C
+ * Visited vertex: D
+ * Visited vertex: G
+ * Visited vertex: H
+ */

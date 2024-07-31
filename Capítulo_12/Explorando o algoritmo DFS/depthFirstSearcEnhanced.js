@@ -10,8 +10,8 @@ export const DFS = graph => {
     const p = {};
     const time = { count : 0 };
     for (let i = 0; i < vertices.length; i++) {
-        f[vertices[i]] = 0;
         d[vertices[i]] = 0;
+        f[vertices[i]] = 0;        
         p[vertices[i]] = null;
     }
     for (let i = 0; i < vertices.length; i++) {
@@ -72,3 +72,9 @@ const result = DFS(graph);
 console.log("Discovery times:", result.discovery);
 console.log("Finish times:", result.finished);
 console.log("Predecessors:", result.predecessors);
+
+/**
+ * Discovery times: { A: 1, B: 2, C: 10, D: 11, E: 3, F: 7, G: 12, H: 14, I: 4 }
+ * Finish times: { A: 18, B: 9, C: 17, D: 16, E: 6, F: 8, G: 13, H: 15, I: 5 }
+ * Predecessors: { A: null, B: 'A', C: 'A', D: 'C', E: 'B', F: 'B', G: 'D', H: 'D', I: 'E' }
+ */

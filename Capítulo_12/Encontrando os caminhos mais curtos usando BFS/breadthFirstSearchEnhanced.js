@@ -73,7 +73,7 @@ const fromVertex = myVertices[0];
 for (let i = 1; i < myVertices.length; i++) {
     const toVertex = myVertices[i];
     const path = new Stack();
-    for (let v = toVertex; v !== fromVertex; v = shortestPathA.predecessors[v]) {
+    for (let v = toVertex; v !== fromVertex; v =shortestPathA.predecessors[v]) {
         path.push(v);
     }
     path.push(fromVertex);
@@ -83,3 +83,14 @@ for (let i = 1; i < myVertices.length; i++) {
     }
     console.log(s);
 }
+
+/**
+ * A - B
+ * A - C
+ * A - D
+ * A - B - E
+ * A - B - F
+ * A - C - G
+ * A - D - H
+ * A - B - E - I
+ */
