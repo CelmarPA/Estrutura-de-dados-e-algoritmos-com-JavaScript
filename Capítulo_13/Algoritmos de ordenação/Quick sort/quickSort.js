@@ -1,7 +1,7 @@
-import { Compare, defaultCompare, swap, createNonSortedArray } from "../../Models/util.js";
+import { Compare, defaultCompare, swap} from "../../Models/util.js";
 
 // Algoritmo de quick sort:
-function quickSort(array, compareFn = defaultCompare) {
+export function quickSort(array, compareFn = defaultCompare) {
     return quick(array, 0, array.length - 1, compareFn);
 };
 
@@ -42,7 +42,7 @@ function partition(array, left, right, compareFn) {
 }
 
 // Teste da função insertionSort
-let array = [3, 5, 1, 6, 4, 7, 2];
-console.log(array.join(", ")); // 3, 5, 1, 6, 4, 7, 2
-array = quickSort(array);
-console.log(array.join(", ")); // 1, 2, 3, 4, 5, 6, 7
+// let array = [3, 5, 1, 6, 4, 7, 2];
+// console.log(array.join(", ")); // 3, 5, 1, 6, 4, 7, 2
+// array = quickSort(array);
+// console.log(array.join(", ")); // 1, 2, 3, 4, 5, 6, 7
