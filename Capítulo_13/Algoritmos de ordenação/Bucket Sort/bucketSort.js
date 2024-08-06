@@ -8,6 +8,7 @@ function bucketSort(array, bucketSize = 5) {
     return sortBuckets(buckets);
 }
 
+// Função createBuckets
 function createBuckets(array, bucketSize) {
     let minValue = array[0];
     let maxValue = array[0];
@@ -30,6 +31,7 @@ function createBuckets(array, bucketSize) {
     return buckets;
 }
 
+// Função sortBuckets
 function sortBuckets(buckets) {
     const sortedArray = [];
     for (let i = 0; i < buckets.length; i++) {
